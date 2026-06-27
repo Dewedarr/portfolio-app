@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>12mdqyoa70</Fingerprint>
-      <Integrity>6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=</Integrity>
+      <Fingerprint>v3nqvemt4w</Fingerprint>
+      <Integrity>ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\avatar.jpg'))</OriginalItemSpec>

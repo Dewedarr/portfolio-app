@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/Portfolio.API/uploads/avatar.12mdqyoa70.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\avatar.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"12mdqyoa70"},{"Name":"integrity","Value":"sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="},{"Name":"label","Value":"_content/Portfolio.API/uploads/avatar.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"217202"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00226dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Jun 2026 17:27:17 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Portfolio.API/uploads/avatar.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\avatar.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"217202"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00226dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Jun 2026 17:27:17 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"189791"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Jun 2026 17:43:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Portfolio.API/uploads/avatar.v3nqvemt4w.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\avatar.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v3nqvemt4w"},{"Name":"integrity","Value":"sha256-ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY="},{"Name":"label","Value":"_content/Portfolio.API/uploads/avatar.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"189791"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Jun 2026 17:43:01 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

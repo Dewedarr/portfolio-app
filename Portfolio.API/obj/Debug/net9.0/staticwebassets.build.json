@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "urCDVK15HP1ZYGw0nyo1ml/xnD6pEgRPlsZ39pDcMic=",
+  "Hash": "+Tjb2gOTGafjwxgkJwElXykldQ+oC5GkPKh4nKBiNsw=",
   "Source": "Portfolio.API",
   "BasePath": "_content/Portfolio.API",
   "Mode": "Default",
@@ -31,59 +31,14 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "12mdqyoa70",
-      "Integrity": "6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=",
+      "Fingerprint": "v3nqvemt4w",
+      "Integrity": "ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\avatar.jpg"
     }
   ],
   "Endpoints": [
-    {
-      "Route": "uploads/avatar.12mdqyoa70.jpg",
-      "AssetFile": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "217202"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 27 Jun 2026 17:27:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "12mdqyoa70"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/avatar.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="
-        }
-      ]
-    },
     {
       "Route": "uploads/avatar.jpg",
       "AssetFile": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
@@ -95,7 +50,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "217202"
+          "Value": "189791"
         },
         {
           "Name": "Content-Type",
@@ -103,11 +58,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\""
+          "Value": "\"ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Jun 2026 17:27:17 GMT"
+          "Value": "Sat, 27 Jun 2026 17:43:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -117,7 +72,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="
+          "Value": "sha256-ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatar.v3nqvemt4w.jpg",
+      "AssetFile": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "189791"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Jun 2026 17:43:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v3nqvemt4w"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ew7vELU9XeUOGnKCn1qhFxbcfuJjrs7gEjlMNftzuDY="
         }
       ]
     }

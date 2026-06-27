@@ -158,3 +158,6 @@ C:\Users\DELL\PortfolioApp\Portfolio.API\obj\Debug\net9.0\Portfolio.API.pdb
 C:\Users\DELL\PortfolioApp\Portfolio.API\obj\Debug\net9.0\Portfolio.API.genruntimeconfig.cache
 C:\Users\DELL\PortfolioApp\Portfolio.API\obj\Debug\net9.0\ref\Portfolio.API.dll
 C:\Users\DELL\PortfolioApp\Portfolio.API\bin\Debug\net9.0\Portfolio.API.staticwebassets.runtime.json
+C:\Users\DELL\PortfolioApp\Portfolio.API\obj\Debug\net9.0\Portfolio.API.sourcelink.json
+C:\Users\DELL\PortfolioApp\Portfolio.API\bin\Debug\net9.0\Npgsql.dll
+C:\Users\DELL\PortfolioApp\Portfolio.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
