@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "urCDVK15HP1ZYGw0nyo1ml/xnD6pEgRPlsZ39pDcMic=",
+  "Source": "Portfolio.API",
+  "BasePath": "_content/Portfolio.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Portfolio.API\\wwwroot",
+      "Source": "Portfolio.API",
+      "ContentRoot": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\",
+      "BasePath": "_content/Portfolio.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
+      "SourceId": "Portfolio.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\",
+      "BasePath": "_content/Portfolio.API",
+      "RelativePath": "uploads/avatar#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "12mdqyoa70",
+      "Integrity": "6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\avatar.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/avatar.12mdqyoa70.jpg",
+      "AssetFile": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "217202"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Jun 2026 17:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "12mdqyoa70"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/avatar.jpg",
+      "AssetFile": "C:\\Users\\DELL\\PortfolioApp\\Portfolio.API\\wwwroot\\uploads\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "217202"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Jun 2026 17:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6dK8lDhDlx9Oe5exWHqYvgYw7ZOBTmls7mVpB3t5cjc="
+        }
+      ]
+    }
+  ]
+}
