@@ -126,9 +126,7 @@ export default function HomePage() {
     return acc
   }, {})
 
-  const avatarSrc = info?.avatarUrl
-    ? `${API_URL}${info.avatarUrl}`
-    : '/avatar.jpg'
+  const avatarSrc = info?.avatarUrl ? `${API_URL}${info.avatarUrl}` : '/avatar.jpg'
 
   if (dataLoading) return (
     <div style={{background:'#070a10',minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>
@@ -142,9 +140,6 @@ export default function HomePage() {
         @keyframes pulse{0%,100%{box-shadow:0 0 6px #10b981;}50%{box-shadow:0 0 14px #10b981;}}
         @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
         @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-        @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-        .hero-left{animation:fadeUp .8s .2s both;}
-        .hero-right{animation:fadeUp .8s .4s both;}
         .ring1{position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(0,212,255,0.25);animation:spin 18s linear infinite;}
         .ring2{position:absolute;inset:-26px;border-radius:50%;border:1px dashed rgba(124,58,237,0.18);animation:spin 28s linear infinite reverse;}
         .nav-link:hover{color:#00d4ff !important;}
@@ -152,21 +147,37 @@ export default function HomePage() {
         .contact-item:hover{border-color:#00d4ff !important;transform:translateX(5px);}
         .soc:hover{border-color:#00d4ff !important;color:#00d4ff !important;}
         .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-        .hamburger span{display:block;width:22px;height:2px;background:#00d4ff;border-radius:2px;transition:all .3s;}
-        .mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(7,10,16,0.98);border-bottom:1px solid rgba(0,212,255,0.1);padding:1rem;flex-direction:column;gap:1rem;z-index:99;}
+        .hamburger span{display:block;width:22px;height:2px;background:#00d4ff;border-radius:2px;}
+        .mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:rgba(7,10,16,0.98);border-bottom:1px solid rgba(0,212,255,0.1);padding:1rem 1.5rem;flex-direction:column;gap:0;z-index:99;}
         .mobile-menu.open{display:flex;}
-        .mobile-menu a{color:#64748b;text-decoration:none;font-family:monospace;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;padding:0.5rem 0;border-bottom:1px solid #1a2744;}
+        .mobile-menu a{color:#94a3b8;text-decoration:none;font-family:monospace;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;padding:0.75rem 0;border-bottom:1px solid #1a2744;}
+
+        /* DESKTOP */
+        .hero-section{padding:8rem 2.5rem 5rem;}
+        .hero-grid{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 240px;gap:5rem;align-items:center;}
+        .hero-right{display:flex;flex-direction:column;align-items:center;gap:16px;}
+        .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+        .nav-links{display:flex;gap:2rem;}
+        .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+        .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;}
+        .contact-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;}
+
+        /* MOBILE */
         @media(max-width:768px){
-          .nav-links{display:none !important;}
           .hamburger{display:flex !important;}
-          .hero-grid{grid-template-columns:1fr !important;}
-          .hero-right{display:none !important;}
-          .hero-btns{justify-content:center !important;}
-          .contact-grid{grid-template-columns:1fr !important;}
+          .nav-links{display:none !important;}
+          .hero-section{padding:5rem 1.2rem 3rem !important;}
+          .hero-grid{grid-template-columns:1fr !important;text-align:center;gap:2rem !important;}
+          .hero-right{order:-1;align-items:center;}
+          .hero-btns{justify-content:center;}
           .skills-grid{grid-template-columns:1fr !important;}
           .proj-grid{grid-template-columns:1fr !important;}
+          .contact-grid{grid-template-columns:1fr !important;gap:2rem !important;}
           .form-row{grid-template-columns:1fr !important;}
-          .stats-box{flex-wrap:wrap;}
+        }
+        @media(max-width:480px){
+          .hero-grid{gap:1.5rem !important;}
         }
       `}</style>
 
@@ -175,12 +186,12 @@ export default function HomePage() {
       {/* NAV */}
       <nav style={{position:'fixed',top:0,left:0,right:0,zIndex:100,padding:'1rem 1.5rem',display:'flex',justifyContent:'space-between',alignItems:'center',backdropFilter:'blur(30px)',background:'rgba(7,10,16,0.88)',borderBottom:'1px solid rgba(0,212,255,0.08)'}}>
         <div style={{fontFamily:'monospace',fontSize:'1rem',color:'#00d4ff',letterSpacing:'3px'}}>AD<span style={{color:'#64748b'}}>.</span></div>
-        <div className="nav-links" style={{display:'flex',gap:'2rem'}}>
+        <div className="nav-links">
           {['About','Skills','Projects','Contact'].map(item => (
             <a key={item} href={`#${item.toLowerCase()}`} className="nav-link" style={{color:'#64748b',textDecoration:'none',fontSize:'0.72rem',letterSpacing:'2px',textTransform:'uppercase',fontFamily:'monospace',transition:'color .3s'}}>{item}</a>
           ))}
         </div>
-        <div style={{display:'flex',alignItems:'center',gap:'1rem'}}>
+        <div style={{display:'flex',alignItems:'center',gap:'0.75rem'}}>
           <a href="/login" style={{border:'1px solid #00d4ff',color:'#00d4ff',padding:'0.35rem 0.9rem',borderRadius:'3px',fontFamily:'monospace',fontSize:'0.68rem',letterSpacing:'2px',textDecoration:'none',whiteSpace:'nowrap'}}>Admin</a>
           <div className="hamburger" onClick={()=>setMenuOpen(!menuOpen)}>
             <span></span><span></span><span></span>
@@ -196,9 +207,10 @@ export default function HomePage() {
       </div>
 
       {/* HERO */}
-      <section style={{position:'relative',zIndex:1,minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',padding:'7rem 1.5rem 4rem'}}>
-        <div className="hero-grid" style={{maxWidth:'1100px',width:'100%',display:'grid',gridTemplateColumns:'1fr 240px',gap:'4rem',alignItems:'center'}}>
-          <div className="hero-left">
+      <section className="hero-section" style={{position:'relative',zIndex:1,minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}>
+        <div className="hero-grid">
+          {/* LEFT */}
+          <div>
             <div style={{display:'inline-flex',alignItems:'center',gap:'0.6rem',border:'1px solid rgba(0,212,255,0.25)',borderRadius:'20px',padding:'0.4rem 1.2rem',fontFamily:'monospace',fontSize:'0.65rem',color:'#00d4ff',letterSpacing:'3px',marginBottom:'1.5rem',background:'rgba(0,212,255,0.04)'}}>
               <span style={{width:'6px',height:'6px',borderRadius:'50%',background:info?.isAvailable?'#10b981':'#64748b',animation:info?.isAvailable?'pulse 2s infinite':'none'}}></span>
               {info?.isAvailable ? 'Available for new opportunities' : 'Not available right now'}
@@ -213,21 +225,22 @@ export default function HomePage() {
             <p style={{color:'#64748b',lineHeight:1.8,maxWidth:'520px',marginBottom:'2rem',fontSize:'clamp(0.85rem,2.5vw,1rem)'}}>
               {info?.bio || 'I build high-performance systems that scale.'}
             </p>
-            <div className="hero-btns" style={{display:'flex',gap:'1rem',flexWrap:'wrap',marginBottom:'2.5rem'}}>
+            <div className="hero-btns" style={{marginBottom:'2.5rem'}}>
               <a href="#projects" style={{padding:'0.8rem 1.8rem',background:'#00d4ff',color:'#000',borderRadius:'4px',fontWeight:700,fontSize:'0.85rem',cursor:'pointer',letterSpacing:'1px',textDecoration:'none',transition:'all .3s'}}>View My Work</a>
               <a href="#contact" style={{padding:'0.8rem 1.8rem',background:'transparent',color:'#e2e8f0',border:'1px solid #1a2744',borderRadius:'4px',fontWeight:700,fontSize:'0.85rem',cursor:'pointer',letterSpacing:'1px',textDecoration:'none',transition:'all .3s'}}>Get In Touch</a>
             </div>
-            <div className="stats-box" style={{display:'inline-flex',border:'1px solid #1a2744',borderRadius:'8px',overflow:'hidden',background:'#0b1120'}}>
+            <div style={{display:'inline-flex',border:'1px solid #1a2744',borderRadius:'8px',overflow:'hidden',background:'#0b1120'}}>
               {[[info?.yearsExperience||'2+','Years Exp'],[info?.projectsCount||'5+','Projects'],[info?.techCount||'10+','Technologies']].map(([num,label],i,arr) => (
                 <div key={label} style={{padding:'1rem 1.5rem',textAlign:'center',borderRight:i<arr.length-1?'1px solid #1a2744':'none'}}>
-                  <div style={{fontSize:'1.8rem',fontWeight:800,fontFamily:'monospace',background:'linear-gradient(135deg,#00d4ff,#7c3aed)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{num}</div>
+                  <div style={{fontSize:'clamp(1.4rem,4vw,2rem)',fontWeight:800,fontFamily:'monospace',background:'linear-gradient(135deg,#00d4ff,#7c3aed)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{num}</div>
                   <div style={{fontSize:'0.58rem',color:'#64748b',textTransform:'uppercase',letterSpacing:'2px',marginTop:'0.3rem',fontFamily:'monospace'}}>{label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="hero-right" style={{display:'flex',flexDirection:'column',alignItems:'center',gap:'16px'}}>
+          {/* RIGHT - Profile */}
+          <div className="hero-right">
             <div style={{position:'relative',cursor:'pointer',width:'180px',height:'180px'}}>
               <div className="ring1"></div>
               <div className="ring2"></div>
@@ -256,9 +269,11 @@ export default function HomePage() {
             <span style={{width:'24px',height:'1px',background:'#00d4ff'}}></span>tech stack
           </div>
           <h2 style={{fontSize:'clamp(1.8rem,5vw,3rem)',fontWeight:800,marginBottom:'2.5rem',letterSpacing:'-1px'}}>What I Work With</h2>
-          <div className="skills-grid" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'1rem'}}>
+          <div className="skills-grid">
             {Object.entries(skillsByCategory).map(([cat, catSkills]) => (
-              <div key={cat} style={{background:'#0b1120',border:'1px solid #1a2744',borderRadius:'10px',padding:'1.25rem'}}>
+              <div key={cat} style={{background:'#0b1120',border:'1px solid #1a2744',borderRadius:'10px',padding:'1.25rem',transition:'border-color .3s'}}
+                onMouseEnter={e=>e.currentTarget.style.borderColor='rgba(0,212,255,0.3)'}
+                onMouseLeave={e=>e.currentTarget.style.borderColor='#1a2744'}>
                 <div style={{fontFamily:'monospace',fontSize:'0.7rem',letterSpacing:'3px',textTransform:'uppercase',marginBottom:'1rem',display:'flex',alignItems:'center',gap:'0.6rem',color:catSkills[0]?.color||'#00d4ff'}}>
                   <span style={{width:'16px',height:'1px',background:catSkills[0]?.color||'#00d4ff'}}></span>{cat}
                 </div>
@@ -280,7 +295,7 @@ export default function HomePage() {
             <span style={{width:'24px',height:'1px',background:'#00d4ff'}}></span>portfolio
           </div>
           <h2 style={{fontSize:'clamp(1.8rem,5vw,3rem)',fontWeight:800,marginBottom:'2.5rem',letterSpacing:'-1px'}}>Featured Projects</h2>
-          <div className="proj-grid" style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:'1rem'}}>
+          <div className="proj-grid">
             {projects.map((p, idx) => (
               <div key={p.id} className="proj-card" style={{background:'#0b1120',border:'1px solid #1a2744',borderRadius:'10px',overflow:'hidden',transition:'all .35s',cursor:'pointer'}}>
                 <div style={{height:'140px',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'2.8rem',position:'relative',background:p.backgroundGradient||'linear-gradient(135deg,#0a1628,#0f2040)'}}>
@@ -305,7 +320,7 @@ export default function HomePage() {
 
       {/* CONTACT */}
       <section id="contact" style={{position:'relative',zIndex:1,padding:'5rem 1.5rem',background:'#0a0f1a'}}>
-        <div className="contact-grid" style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1.1fr',gap:'3rem',alignItems:'start'}}>
+        <div className="contact-grid">
           <div>
             <div style={{fontFamily:'monospace',fontSize:'0.65rem',color:'#00d4ff',letterSpacing:'4px',textTransform:'uppercase',marginBottom:'0.5rem',display:'flex',alignItems:'center',gap:'0.75rem'}}>
               <span style={{width:'24px',height:'1px',background:'#00d4ff'}}></span>contact
@@ -341,7 +356,7 @@ export default function HomePage() {
             {success && <div style={{background:'rgba(16,185,129,0.1)',border:'1px solid rgba(16,185,129,0.3)',color:'#10b981',borderRadius:'8px',padding:'0.75rem',marginBottom:'1rem',fontSize:'0.85rem'}}>✓ Message sent successfully!</div>}
             {errors.general && <div style={{background:'rgba(239,68,68,0.1)',border:'1px solid rgba(239,68,68,0.3)',color:'#f87171',borderRadius:'8px',padding:'0.75rem',marginBottom:'1rem',fontSize:'0.85rem'}}>{errors.general}</div>}
             <form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column',gap:'0.75rem'}}>
-              <div className="form-row" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'0.75rem'}}>
+              <div className="form-row">
                 {[['name','Name','Your name'],['email','Email','name@gmail.com']].map(([field,label,ph])=>(
                   <div key={field}>
                     <label style={{fontFamily:'monospace',fontSize:'0.58rem',color:'#64748b',letterSpacing:'2px',textTransform:'uppercase',display:'block',marginBottom:'0.4rem'}}>{label}</label>

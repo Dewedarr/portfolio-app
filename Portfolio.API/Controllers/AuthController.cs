@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.API.Data;
@@ -19,7 +20,6 @@ namespace Portfolio.API.Controllers
             _tokenService = tokenService;
         }
 
-        // POST: api/auth/login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
@@ -39,12 +39,24 @@ namespace Portfolio.API.Controllers
 
             var token = _tokenService.CreateToken(user);
 
-            return Ok(new
-            {
-                token,
-                username = user.Username,
-                email = user.Email
-            });
+            return Ok(new { token, username = user.Username, email = user.Email });
+        }
+
+        [Authorize]
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO dto)
+        {
+            var user = await _context.AdminUsers.FirstOrDefaultAsync();
+            if (user == null) return NotFound();
+
+            bool validPassword = BCrypt.Net.BCrypt.Verify(dto.CurrentPassword, user.PasswordHash);
+            if (!validPassword)
+                return BadRequest(new { message = "Current password is incorrect" });
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Password changed successfully" });
         }
     }
 }

@@ -38,3 +38,5 @@ export const updatePortfolioInfo = (data) => API.put('/portfolioinfo', data)
 export const uploadAvatar = (formData) => API.post('/upload/avatar', formData, {
   headers: { 'Content-Type': 'multipart/form-data' }
 })
+// Change Password
+export const changePassword = (data) => API.post('/auth/change-password', data)

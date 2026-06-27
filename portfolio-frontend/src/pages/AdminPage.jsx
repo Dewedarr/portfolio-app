@@ -5,7 +5,7 @@ import {
   getContacts, markAsRead, deleteContact,
   getProjects, createProject, updateProject, deleteProject,
   getSkills, createSkill, updateSkill, deleteSkill,
-  getPortfolioInfo, updatePortfolioInfo, uploadAvatar
+  getPortfolioInfo, updatePortfolioInfo, uploadAvatar, changePassword
 } from '../services/api'
 
 const s = {
@@ -55,6 +55,9 @@ export default function AdminPage() {
   const [contactFilter, setContactFilter] = useState('all')
   const [avatarUploading, setAvatarUploading] = useState(false)
   const [avatarPreview, setAvatarPreview] = useState(null)
+  const [pwForm, setPwForm] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' })
+  const [pwMsg, setPwMsg] = useState(null)
+  const [pwLoading, setPwLoading] = useState(false)
 
   const showMsg = (text, type='success') => {
     setMsg({text, type})
@@ -153,7 +156,27 @@ export default function AdminPage() {
     setSkills(skills.filter(s => s.id !== id))
     showMsg('Skill deleted')
   }
-
+const handleChangePassword = async () => {
+  if (pwForm.newPassword !== pwForm.confirmPassword) {
+    setPwMsg({ text: 'New passwords do not match', type: 'error' })
+    return
+  }
+  if (pwForm.newPassword.length < 6) {
+    setPwMsg({ text: 'Password must be at least 6 characters', type: 'error' })
+    return
+  }
+  setPwLoading(true)
+  try {
+    await changePassword({ currentPassword: pwForm.currentPassword, newPassword: pwForm.newPassword })
+    setPwMsg({ text: 'Password changed successfully!', type: 'success' })
+    setPwForm({ currentPassword: '', newPassword: '', confirmPassword: '' })
+  } catch {
+    setPwMsg({ text: 'Current password is incorrect', type: 'error' })
+  } finally {
+    setPwLoading(false)
+    setTimeout(() => setPwMsg(null), 3000)
+  }
+}
   // INFO
   const handleSaveInfo = async () => {
     try {
@@ -436,6 +459,27 @@ export default function AdminPage() {
               </div>
 
               <button style={s.btnPrimary} onClick={handleSaveInfo}>💾 Save All Changes</button>
+              <hr style={s.divider}/>
+<div style={s.sectionTitle}><span style={{width:'16px',height:'1px',background:'#00d4ff'}}></span>Change Password</div>
+{pwMsg && <div style={s.msg(pwMsg.type)}>{pwMsg.type==='success'?'✓':'✗'} {pwMsg.text}</div>}
+<div style={s.grid2}>
+  <div>
+    <label style={s.label}>Current Password</label>
+    <input type="password" style={s.input()} value={pwForm.currentPassword} onChange={e=>setPwForm({...pwForm,currentPassword:e.target.value})} placeholder="Current password"/>
+  </div>
+  <div></div>
+  <div>
+    <label style={s.label}>New Password</label>
+    <input type="password" style={s.input()} value={pwForm.newPassword} onChange={e=>setPwForm({...pwForm,newPassword:e.target.value})} placeholder="New password (min 6)"/>
+  </div>
+  <div>
+    <label style={s.label}>Confirm New Password</label>
+    <input type="password" style={s.input()} value={pwForm.confirmPassword} onChange={e=>setPwForm({...pwForm,confirmPassword:e.target.value})} placeholder="Confirm new password"/>
+  </div>
+</div>
+<button style={s.btnPrimary} onClick={handleChangePassword} disabled={pwLoading}>
+  {pwLoading ? 'Changing...' : '🔒 Change Password'}
+</button>
             </div>
           </div>
         )}
