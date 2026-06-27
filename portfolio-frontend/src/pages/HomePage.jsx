@@ -338,7 +338,7 @@ export default function HomePage() {
     {icon:'📍',label:'Location',val:info?.location||'Giza, Egypt · Open to Remote'},
   ].map(item => (
     <a key={item.label}
-      href={item.label==='Email'?`mailto:${item.val}`:item.label==='Location'?'#':`https://${item.val}`}
+    href={item.label==='Email'?`mailto:${item.val}`:item.label==='Location'?'#':item.val?.startsWith('http')?item.val:`https://${item.val}`}
       target={item.label==='Location'?'_self':'_blank'}
       rel="noreferrer"
       className="contact-item"
