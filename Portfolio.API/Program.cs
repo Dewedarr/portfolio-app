@@ -37,7 +37,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173", "https://portfolio-o9flpgw0t-dewedarrs-projects.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
