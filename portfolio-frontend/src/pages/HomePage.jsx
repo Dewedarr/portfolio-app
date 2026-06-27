@@ -330,22 +330,27 @@ export default function HomePage() {
               <span style={{background:'linear-gradient(135deg,#00d4ff,#7c3aed)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>Great Together</span>
             </h2>
             <p style={{color:'#64748b',fontSize:'0.9rem',lineHeight:1.8,marginBottom:'1.5rem'}}>Have a project in mind? I'm open to new opportunities.</p>
-            <div style={{display:'flex',flexDirection:'column',gap:'0.6rem'}}>
-              {[
-                {icon:'✉️',label:'Email',val:info?.email||'ahmed.dewedar@gmail.com'},
-                {icon:'💼',label:'LinkedIn',val:info?.linkedIn||'linkedin.com/in/ahmeddewedar'},
-                {icon:'🐙',label:'GitHub',val:info?.gitHub||'github.com/ahmeddewedar'},
-                {icon:'📍',label:'Location',val:info?.location||'Giza, Egypt · Open to Remote'},
-              ].map(item => (
-                <div key={item.label} className="contact-item" style={{display:'flex',alignItems:'center',gap:'0.75rem',padding:'0.75rem 1rem',background:'#0b1120',border:'1px solid #1a2744',borderRadius:'8px',transition:'all .3s',cursor:'pointer'}}>
-                  <span>{item.icon}</span>
-                  <div>
-                    <div style={{fontFamily:'monospace',fontSize:'0.58rem',color:'#64748b',letterSpacing:'1px',textTransform:'uppercase'}}>{item.label}</div>
-                    <div style={{fontSize:'0.82rem',fontWeight:600,wordBreak:'break-all'}}>{item.val}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+           <div style={{display:'flex',flexDirection:'column',gap:'0.6rem'}}>
+  {[
+    {icon:'✉️',label:'Email',val:info?.email||'ahmed.dewedar@gmail.com'},
+    {icon:'💼',label:'LinkedIn',val:info?.linkedIn||'linkedin.com/in/ahmeddewedar'},
+    {icon:'🐙',label:'GitHub',val:info?.gitHub||'github.com/ahmeddewedar'},
+    {icon:'📍',label:'Location',val:info?.location||'Giza, Egypt · Open to Remote'},
+  ].map(item => (
+    <a key={item.label}
+      href={item.label==='Email'?`mailto:${item.val}`:item.label==='Location'?'#':`https://${item.val}`}
+      target={item.label==='Location'?'_self':'_blank'}
+      rel="noreferrer"
+      className="contact-item"
+      style={{display:'flex',alignItems:'center',gap:'0.75rem',padding:'0.75rem 1rem',background:'#0b1120',border:'1px solid #1a2744',borderRadius:'8px',transition:'all .3s',cursor:'pointer',textDecoration:'none',color:'inherit'}}>
+      <span>{item.icon}</span>
+      <div>
+        <div style={{fontFamily:'monospace',fontSize:'0.58rem',color:'#64748b',letterSpacing:'1px',textTransform:'uppercase'}}>{item.label}</div>
+        <div style={{fontSize:'0.82rem',fontWeight:600,wordBreak:'break-all'}}>{item.val}</div>
+      </div>
+    </a>
+  ))}
+</div>
           </div>
 
           <div style={{background:'#0b1120',border:'1px solid #1a2744',borderRadius:'12px',padding:'1.5rem',position:'relative',overflow:'hidden'}}>
